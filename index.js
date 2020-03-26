@@ -166,7 +166,7 @@ class Instructor extends Lambdasian{
     return `${student.name} receives a perfect score on ${this.subject}`
   }
 }
-
+console.log(Instructor)
 /*
   TASK 5
     - Write a Student class extending Lambdasian.
@@ -182,10 +182,24 @@ class Instructor extends Lambdasian{
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
+class Student extends Lambdasian {
+  constructor(object){
+    super(object)
+    this.previousBackground = object.previousBackground;
+    this.className = object.className;
+    this.favSubjects = object.favSubjects;
+  }
+  listSubjects(favSubjects){
+    return `Loving ${this.favSubjects}`
+  }  
+  PRAssignment(subject){
+    return `student ${this.name} has submitted a PR for ${subject}`
+  }
+  sprintChallenge(subject){
+    return `student ${this.name} has begun sprint challenge on ${subject}`
+  }
 }
-
+console.log(Student)
 /*
   TASK 6
     - Write a ProjectManager class extending Instructor.
