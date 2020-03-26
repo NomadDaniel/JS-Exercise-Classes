@@ -43,8 +43,28 @@ class Airplane {
 */
 
 class Person {
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat(someFood){
+  if(this.stomach.length < 10){
+    this.stomach.push(someFood);
+    }
+  }
+  poop(){
+    if(this.stomach = []){
+    }
+  }
+  toString(){
+    return `${this.name}, ${this.age}`;    
+  }
+};
 
-}
+const Billy = new Person({name: "billy", age: 30})
+console.log(Billy)
+
 
 /*
   TASK 2
