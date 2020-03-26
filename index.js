@@ -101,10 +101,10 @@ class Car {
       this.odometer = this.odometer + totalTankDistance;
       this.tank = 0;
       return `I ran out of fuel at ${this.odometer} miles!`
-   }
- }
+    }
+  }  
 }
-
+console.log(Car)
 /*
   TASK 3
     - Write a Lambdasian class.
@@ -119,7 +119,6 @@ class Car {
 */
 class Lambdasian {
   constructor(object){
-   
     this.name = object.name;
     this.age = object.age;
     this.location = object.location;
@@ -129,13 +128,11 @@ class Lambdasian {
   }
 }
 
-
 const newLambdasian = new Lambdasian({
   name: 'Petar', 
   age: 23, 
   location: 'NY City',
   })
-
 
 console.log(newLambdasian)
 
@@ -153,8 +150,21 @@ console.log(newLambdasian)
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian{
+  constructor(object){
+    super(object)
+    this.specialty = object.specialty;
+    this.favLanguage = object.favLanguage;
+    this.catchPhrase = object.catchPhrase;
+    this.subject = 'redux';
+    this.student = object.student;
+  }
+  demo(subject){
+    return `Today we are learning about ${this.subject}`;
+  }
+  grade(student, subject){
+    return `${student.name} receives a perfect score on ${this.subject}`
+  }
 }
 
 /*
